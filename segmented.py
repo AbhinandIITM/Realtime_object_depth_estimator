@@ -6,7 +6,7 @@ import numpy as np
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(3)
 hands = mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7)
 
 # Smoothing factor for fingertip positions
@@ -53,7 +53,7 @@ while cap.isOpened():
             x, y = smoothed_tip
 
             # Define a small ROI around the fingertip
-            roi_size = 75
+            roi_size = 50
             x1, y1 = max(0, x - roi_size), max(0, y - roi_size)
             x2, y2 = min(w, x + roi_size), min(h, y + roi_size)
             roi = frame[y1:y2, x1:x2]

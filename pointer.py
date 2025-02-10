@@ -12,7 +12,7 @@ mp_draw = mp.solutions.drawing_utils
 hands = mp_hands.Hands(min_detection_confidence=0.7, min_tracking_confidence=0.7)
 
 # Webcam capture
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(3)
 SMOOTHING_FACTOR = 5  # Higher value = smoother movement
 prev_x, prev_y = 0, 0  # Store previous cursor position
 
